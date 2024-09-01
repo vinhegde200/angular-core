@@ -1,0 +1,7 @@
+<div class="c-form-field cls-theme-switch">
+    <p-dropdown 
+        [options]="themes" 
+        [(ngModel)]="selectedTheme" (onChange)="changeTheme($event)"
+        optionLabel="theme" 
+        placeholder="Select a theme" />
+</div>

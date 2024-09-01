@@ -1,0 +1,135 @@
+.cls-company-info-container {
+    display: flex;
+    background-color: rgba($shade1004, .23);    
+    height: 120px;
+    padding: 20px 30px;
+    position: relative;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    .cls-company-info-tittle-sec{
+        width: 30%;        
+        .cls-company-logo {
+            position: absolute;
+            left: 30px;
+            bottom: -50px;
+            height: 100px;
+            width: 100px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $shade000;
+            box-shadow: 0px 2px 4px 0px rgba($shade1012, .50);  
+            padding: 1px;  
+            img {
+                height: 100px;
+                width: 100%;
+                border-radius: 100px;                
+            }
+            i {
+                height: 100px;
+                font-size: 70px;
+                margin-top: 14px;
+            }
+        }
+    
+    }
+    .cls-company-info-header {     
+        margin-right: 20px;  
+        .cls-header {
+            font-size: 2rem;
+            padding-left: 130px;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 100px;
+        }
+    }
+    .cls-company-info-detail-sec{
+        display: flex;
+        border-left: 1px solid rgba(#000, .10);
+        margin: 10px 0;
+        .cls-contact-detail{   
+                color: $primaryTextColor;
+                font-size: 1rem;
+                font-weight: 500;
+                margin: 0 20px;         
+            i{
+                color: $shade400;
+                margin-right: .5rem;            
+            }
+        }
+    }         
+    
+}
+.cls-url-info {
+    margin-left: 160px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.cls-edit-logo{
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    background-color: $shade1005;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    text-align: center;
+    cursor: pointer;
+    i{
+        font-size: 1rem !important;
+        height: max-content !important;
+        line-height: 0;
+        color: $shade400;
+    }
+}
+.cls-customer-info-container{
+    padding-bottom: 20px;    
+}
+
+.cls-user-addressbook{
+    // padding: 15px 0;
+    position: relative;
+    &::before{
+        content: '';
+        display: block;
+        width: calc(100% - 50px); 
+        border-bottom: 1.5px solid $shade1004;
+        position: absolute;
+        left: 50%;
+        top: -15px;
+        transform: translateX(-50%);
+    }
+    .cls-addressbook-head{
+        font-size: 1.25rem;
+        font-weight: 600;
+        display: inline-block;
+        line-height: 34px;        
+    }
+    button{
+        float: right;
+    }
+
+    .cls-user-addressbook-cardsec{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        margin-top: 15px;
+        .cls-user-addressbook-card{
+            border: 1px solid $shade1011;
+            border-radius: 8px;
+            background-color: $shade000;
+            padding: 10px;
+            height: 110px;
+            box-shadow: 0px 2px 4px 0px rgba($shade1013, .14);  
+            .cls-user-addressbook-card-detail{
+                font-size: .875rem;
+                color: $primaryTextColor;
+                font-weight: 500;
+                line-height: 1.3;
+            }
+        }
+    }
+}

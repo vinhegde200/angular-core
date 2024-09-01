@@ -1,0 +1,94 @@
+<div id="_id_txn-container" class="cls-txn-container cls-translation-page">
+    <div id="_id-lang-list" class="cls-lang-list">
+        <div class="language-head">
+            <span class="cls-main-container-tittle" translate>translation.language</span>
+            <button class="cls-round-button" (click)="addNewLanguage()">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <p-table [value]="langs" styleClass="cls-100pc" [scrollable]="true" scrollHeight="520px">
+            <ng-template pTemplate="header">
+                <p-iconField iconPosition="right">
+                    <p-inputIcon styleClass="fa-solid fa-magnifying-glass" />
+                    <input type="text" pInputText placeholder="Search" />
+                </p-iconField>
+            </ng-template>
+            <ng-template pTemplate="body" let-lang>
+                <tr>
+                    <td (click)="langSelected($event, lang)" [class.selected]="selectedLang == lang">
+                        <div>
+                            <span class="fa-solid fa-line-columns"></span>&nbsp;&nbsp;
+                            {{lang.langStr}}
+                        </div>
+                       <div class="cls-lang-buttons">
+                            <button class="fa-solid fa-copy cls-round-button cls-skip-default"></button>
+                            &nbsp;&nbsp;
+                            <button class="fa-solid fa-trash cls-round-button"></button>
+                       </div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <div id="_id-lang-details" class="cls-lang-details">
+        @if (selectedLang != null) {
+        <div id="_id-selected-lang" class="cls-selected-lang">
+            <div class="cls-sel-lang-str">
+                {{selectedLang.langStr}}
+            </div>
+            <div class="cls-upload-download">
+                <button class="cls-round-button" (click)="uploadLangString()">
+                    <i class="fa-solid fa-upload"></i>
+                </button>
+                <button class="cls-round-button" (click)="download()">
+                    <i class="fa-solid fa-download"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="_id-language-name" class="cls-lang-names-container">
+            <div class="cls-inline-div">
+                <div class="c-form-field">
+                    <div class="c-form-field-name">
+                        <span class="cls-form-icon fa-solid fa-line-columns"></span>
+                        <label id="_lang_label" translate>newlang.langcode</label>
+                    </div>
+                    <input type="text" [disabled]="!(selectedLang.newRec == true)" pInputText [(ngModel)]="selectedLang.lang"/>
+                </div>
+                <div class="c-form-field">
+                    <div class="c-form-field-name">
+                        <span class="cls-form-icon fa-solid fa-line-columns"></span>
+                        <label id="_langstr_label" translate>newlang.langname</label>
+                    </div>
+                    <input id="_langstr" type="text" pInputText [(ngModel)]="selectedLang.langStr"/>
+                </div>
+            </div>
+            <div id="_id-lang-details-header" class="cls-lang-details-hdr">
+                <button class="cls-round-button" (click)="addRow()">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="_id-lang-details-table" class="cls-lang-details-table">
+            <p-table [value]="txjson" styleClass="cls-100pc" [scrollable]="true" scrollHeight="400px">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th translate>langlist.table.hdr.key</th>
+                        <!-- <th translate>langlist.table.hdr.value</th> -->
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-tx>
+                    <tr>
+                        <td style="width: 100%">
+                            <app-txrow [txrow]="tx"></app-txrow>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+        }
+    </div>
+</div>
+
+<input #fileinput class="cls-hide-element" type="file" />

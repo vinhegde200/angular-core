@@ -1,0 +1,45 @@
+@if(isAdminUser()) {
+  <main class="mainarea-container">
+    <div class="cls-left-pane-container">
+      <app-leftpane #leftmenu (itemClicked)="navigate($event)"></app-leftpane>
+    </div>
+    <div class="cls-main-area">
+      <app-topbar [company]="company" [branding]="branding" [user]="user" 
+          (logout)="logoutUser()"
+          (signin)="signInUser()"
+          (showMenu)="leftmenu.sidebarVisible = true"></app-topbar>
+      <div class="cls-main">
+        <router-outlet />
+      </div>
+    </div>
+  </main>
+}
+@if(isCustomerUser()) {
+  <main class="mainarea-container">
+    <div class="cls-main-area-user">
+      <app-topbar-user [company]="company" [branding]="branding" [user]="user" 
+          (logout)="logoutUser()"
+          (signin)="signInUser()"></app-topbar-user>
+      <div class="cls-main-user">
+        <router-outlet />
+      </div>
+    </div>
+  </main>
+}
+@if (userNotLoggedIn()) {
+  <main class="mainarea-container">
+    <div class="cls-main-area-user">
+      <app-topbar-user [company]="company" [branding]="branding" [user]="user" *ngIf="!hideHeaders"
+          (logout)="logoutUser()"
+          (signin)="signInUser()"></app-topbar-user>
+      <div [class.cls-main-user]="!hideHeaders" [class.cls-main-user-setup]="hideHeaders">
+        <router-outlet />
+      </div>
+    </div>
+  </main>
+}
+<app-error-dlg></app-error-dlg>
+<!-- <app-missing-tx></app-missing-tx> -->
+ <app-inline-confirm></app-inline-confirm>
+ <ng-http-loader></ng-http-loader>
+ <p-confirmDialog key="confirmDlg"/>

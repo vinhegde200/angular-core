@@ -1,0 +1,59 @@
+<div id="_id_settings_container" class="cls-page-container cls-settins-page">
+    <div id="_id_comp_details_header" class="cls-page-header">
+        <span class="page-title">
+            {{'settingspage.header' | translate}}
+        </span>
+        <span class="cls-actions">
+            @if (selectedModule == 'configurations') {
+                <button pButton pRipple label="{{ 'settings.save' | translate }}" id="_save-configsettings-button"
+                    class="p-button-primary" (click)="configuration?.saveAppSettings()">
+                </button>
+            }
+            @if (selectedModule == 'languages') {
+                <!-- <button pButton pRipple label="{{'language.exportasjson' | translate}}" id="_save-settings-button" (click)="translation?.download()"
+                    class="p-button-secondary">
+                </button> -->
+                <button pButton pRipple label="{{ 'settings.save' | translate }}" id="_save-langsettings-button"
+                    class="p-button-primary" (click)="translation?.save()">
+                </button>
+            }
+        </span>
+    </div>
+    <div id="_id_settings" class="cls-main-container cls-setting-splitter">
+        <p-splitter [panelSizes]="[22, 78]" ngClass="cls-width-100per">
+            <ng-template pTemplate>
+                <div id="_id_settings_list" class="cls-settings-list cls-setting-menu">
+                    <div class="">
+                        <p-iconField iconPosition="right">
+                            <p-inputIcon styleClass="fa-solid fa-magnifying-glass" />
+                            <input type="text" pInputText placeholder="Search" />
+                        </p-iconField>
+                    </div><br />
+                    <p-tree [value]="settingsList" selectionMode="single" (onNodeSelect)="handleSelection($event)" [(selection)]="selectedNode">
+                        <!-- <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+                            <tr [ttRow]="rowNode">
+                                <td (click)="showPage(rowData)">
+                                    <p-treeTableToggler [rowNode]="rowNode" />
+                                    {{ rowData.name }}
+                                </td>
+                                <td>{{ rowData.label }}</td>
+                            </tr>
+                        </ng-template> -->
+                    </p-tree>
+                </div>
+            </ng-template>
+            <ng-template pTemplate>
+                @if (selectedModule == 'configurations') {
+                    <div class="cls-full-width cls-padding cls-limit-height">
+                        <app-configurations #configuration></app-configurations>
+                    </div>
+                }
+                @if (selectedModule == 'languages') {
+                    <div class="cls-full-width cls-limit-height">
+                        <app-translation #translation></app-translation>
+                    </div>
+                }
+            </ng-template>
+        </p-splitter>
+    </div>
+</div>

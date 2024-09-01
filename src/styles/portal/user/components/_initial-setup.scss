@@ -1,0 +1,105 @@
+.cls-initial-setup {
+    display: flex;
+    width: 1200px;
+    margin: 0px auto;
+    background-color: $shade000;    
+    .steps-logo{
+        height: 48px;
+        margin-bottom: 12px;
+        img{
+            width: auto;
+            height: 100%;
+        }
+    }
+    .cls-steps-section {
+        width: 25%;
+        display: inline-block;
+        height: calc(100vh);
+        padding: 30px 20px 20px;
+        background-image: url('../../../../assets/logos/setup/background.png');  
+        background-repeat: no-repeat;     
+        background-position: bottom right;      
+        background-size: cover;  
+    }
+
+    .cls-setup-section {
+        width: 75%;
+        height: calc(100vh);
+        padding: 20px;
+    }
+
+    .cls-left-header {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .cls-steps-container {
+        padding-left: 20px;
+
+        .cls-step {
+            margin: 50px 0;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+
+            span:nth-child(1) {
+                width: 25px;
+                height: 25px;
+                border-radius: 30px;           
+                background-color: $shade1005;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1;
+                .cls-in-step{
+                    background-color: $shade400;
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 20px;
+                    line-height: 20px;
+                    color: $shade000;
+                    text-align: center;                
+                }
+            }
+            span:nth-child(2) {
+                margin-left: 10px;
+                text-transform: capitalize;
+            }
+            &.active{
+                span:nth-child(1) {         
+                    background-color: $shade1005;
+                    .cls-in-step{
+                        background-color: $primaryColor;               
+                    }
+                }
+            }
+        }
+
+        .completed {
+            background-color: $shade1006!important;
+            .cls-in-step{
+                background-color: $shade1007!important;
+            }
+        }
+    }
+
+
+    .cls-step-line-container {
+        position: relative;
+        // height: 200px; 
+    }
+
+    .cls-step-line-container::before {
+        content: '';
+        position: absolute;
+        left: 11px;
+        top: 25px;
+        bottom: 0;
+        height: 50px;
+        border-left: 2px dashed $shade1004;
+    }
+
+    .cls-step-line-container:last-child::before{
+        display: none;
+    }
+}

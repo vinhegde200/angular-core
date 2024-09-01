@@ -1,0 +1,266 @@
+.cls-cart-shipment {
+    .cls-table-area {
+        width: calc(100% - 250px);
+    }
+    
+    
+    .cls-cart-button {
+        button{
+            justify-content: center;
+        }
+    }
+
+    .cls-section {
+        background-color: $wizard-background;
+        padding: 12px;       
+        margin-top: 10px;
+        margin-bottom: 10px;   
+        border-radius: $borderRadius;
+        .p-panel {
+            .p-panel-content{
+                background: transparent;
+                padding: 0;
+                border: none;
+            }
+        } 
+    }
+
+    .cls-shipment-header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: uppercase;
+        i{
+            margin-right: 10px;
+        }
+        .cls-shipment-action{
+            display: flex;
+            gap: .5rem;
+            .cls-grid-top-action{
+                border-right: 1px solid $clsBorder;
+            }
+        }
+    }
+
+    .cls-qty-slider {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: .75rem;
+        .p-slider{
+            &.p-slider-horizontal {
+                .p-slider-handle{
+                    margin-left: 0;
+                }
+            }
+        }
+        div:nth-child(1) {
+            width: 145px;
+            background: $date-input-title;
+            margin: 0 10px;
+        }
+        div:nth-child(2) {
+            width: 70px;
+            margin-left: 10px; 
+            line-height: 4px;
+            text-align: right;
+            span:nth-child(2) {
+                padding-left: 10px;
+                color: $validationColor;
+                cursor: pointer;
+            }
+        }
+    }
+    .cls-ship-to-label {
+        display: block;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+   
+    .cls-item-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        justify-content: space-between;
+        .cls-ship-item-col{
+            flex: 1 1 49.5%; 
+            padding: 8px;
+            box-sizing: border-box;
+            background: $shade000;
+            max-width: 49.5%;
+            border-radius: $borderRadius;
+        }
+        .cls-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .cls-itemdesc {
+                width: 60%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                span:nth-child(1) {
+                    display: contents;
+                    font-weight: 500;
+                    font-size: .875rem;
+                }
+                span:nth-child(2) {
+                    display: block;
+                    font-size: .625rem;
+                }
+            }
+            .cls-qty {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                .cls-remaining {
+                    margin-right: 20px;
+                    span:nth-child(1) {
+                        display: block;
+                        font-size: 0.75rem;
+                    }
+                }
+                input{
+                    max-width: 100px;
+                }
+            }
+        }
+    }
+    .cls-shipment-action {
+        // height: 50px;
+        display: flex;
+        justify-content: right;
+    }
+    
+    .cls-shipment-cards {
+        overflow: auto;
+        max-height: calc(100vh - 300px);
+    }
+    
+    .cls-po-buttons {
+        display: flex;
+        width: 100%;
+        margin-bottom: 8px;
+        justify-content: space-between;
+        gap: .5rem;
+        button {            
+            i{
+                color: $primary-color;
+            }
+            span{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-wrap: nowrap;
+                margin-left: 5px;
+                color: $text-color;
+            }
+            &.active{
+                background-color: $secondaryColor;
+            }
+            &:hover{
+                background-color: $primary-color;                
+                i, span{
+                    color: $shade000;
+                }
+            }
+        }
+    }
+    
+    .cls-ponum-input {
+        width: 100%;
+        input {
+            width: 100%;
+            font-size: .75rem;
+            &::placeholder{
+                color: $shade1016;
+            }
+        }
+    }
+    
+    .cls-ponum-file {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .fa-circle-info{
+            margin-left: 10px;
+            color: $date-input-title;
+        }
+        .cls-select-file {
+            display: inline-block;
+            border: 1px dashed $primary-color;
+            border-radius: $borderRadius;
+            background-color: $shade000;
+            width: 100%;
+            text-align: center;
+            margin: 10px 0px;
+            cursor: pointer;
+            color: $date-input-title;
+            font-size: .75rem;
+            padding: 8px 8px;
+            .fa-solid{
+                font-size: .875rem;
+            }
+        }
+        input {
+            display: none;
+        }
+    }
+    .cls-hide-expand-button {
+        .p-panel-icons {
+            display: none!important;
+        }
+        .p-panel-header {
+            background: transparent;
+            border: none;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            font-size: .875rem;
+            color: $text-color;
+            font-weight: 600;
+            
+            i{
+                cursor: pointer;
+            }
+        }
+        .p-panel-content {
+            border: 1px solid $clsBorder;
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem;
+            padding: 15px;
+        }
+    }
+
+    .cls-success-order-msg {
+        display: flex;
+        justify-content: left;
+        background-color: rgb($setup-background, 0.4);
+        height: 50px;
+        padding-left: 20px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+
+        div:nth-child(1) {
+            color: $setup-complete;
+            line-height: 50px;
+            font-size: 20px;
+        }
+
+        div:nth-child(2) {
+            color: $setup-complete;
+            padding-left: 20px;
+            padding-top: 5px;
+            span:nth-child(1) {
+                display: block;
+                font-weight: 600;
+            }
+            span:nth-child(2) {
+                font-size: 12px;
+                color: $side-bar-text;
+            }
+        }
+    }
+}
+

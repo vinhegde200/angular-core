@@ -1,0 +1,28 @@
+<div class="cls-container-head">Keyclock Confriguration</div>
+<div id="_id_configuration_cotainer" class="cls-config">    
+    <div class="cls-value c-form-field" *ngFor="let c of configs">
+        <div class="c-form-field-name">
+            <span class="cls-form-icon fa-solid fa-line-columns"></span>
+            <label>{{c.key}}</label>
+        </div>
+        <input id="_id-value" type="text" pInputText class="c-value p-inputtext" [(ngModel)]="c.value"/>
+    </div>
+    <div class="c-form-field">
+        <div class="c-form-field-name">
+            <p-inputSwitch [(ngModel)]="checked" />
+            <label class="cls-marginL-10px">Public Client</label>
+        </div>        
+    </div> 
+    <div class="c-form-field">
+        <div class="c-form-field-name">
+            <p-inputSwitch [(ngModel)]="checked" />
+            <label class="cls-marginL-10px">Verify Token Audience</label>
+        </div>        
+    </div> 
+    <div class="c-form-field">
+        <div class="c-form-field-name">
+            <p-inputSwitch [(ngModel)]="checked" />
+            <label class="cls-marginL-10px">intioptions:Checkloginlframe</label>
+        </div>        
+    </div>    
+</div>

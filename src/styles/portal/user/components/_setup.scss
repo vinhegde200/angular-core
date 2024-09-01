@@ -1,0 +1,95 @@
+.cls-setup-page-container {
+    .cls-flex-layout {
+        display: flex;
+    }
+
+    .cls-setup-container {    
+        form{
+            height: 75vh;
+            width: 80%;
+        }
+        position: relative;
+        .cls-setup-container-img{
+            position: absolute;
+            right: 0px;
+            top: -60px;
+        }
+    }
+    .cls-width-100per{
+        width: auto;
+    }
+
+    .c-form-field {
+        margin-bottom: 20px;
+        label{
+            font-weight: 500;
+        }
+    }
+    .cls-step-header {
+        margin-bottom: 20px;
+        margin-top: 60px;    
+    }
+    .cls-step-head{
+        font-size: 1rem;
+        font-weight: 600;
+        color: $shade1003;
+        margin-bottom: 10px;
+    }
+    .cls-step-subhead{
+        font-size: 12px;
+        font-weight: normal;
+        color: $shade400;
+        width: 70%;
+    }
+
+    .cls-setup-button {
+        margin-top: 20px;
+        margin-left: .5rem;
+        margin-right: .5rem;
+        display: flex;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        div:nth-child(1) {
+            justify-content: left;
+            display: flex;
+            width: 50%;
+            button{
+                font-weight: 500;
+                line-height: 1.2;
+                text-decoration: none;
+            }
+        }
+        div:nth-child(2) {
+            justify-content: right;
+            display: flex;
+            width: 50%;
+        }
+    }
+
+    .cls-login-button {
+        margin-top: 50px;
+        display: flex;
+        justify-content: right;
+    }
+    .cls-step-big-header{
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $shade1003;
+    }
+    .cls-success-section{
+        color: $shade1002;
+        font-size: .85rem;
+        font-weight: 500;
+        margin: 15px 0;
+    }
+    .cls-complete-setup{
+        text-align: center;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

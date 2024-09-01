@@ -1,0 +1,48 @@
+<div id="_id_userpreferences" class="cls-userpreferences-container">
+    <div class="cls-userpreferences-head">
+        <span><p-checkbox [binary]="true" (onChange)="onSelectAll($event)" inputId="binary" />{{'common.select_all' | translate}}</span>
+        <input type="text" pInputText class="c-contact-name" [(ngModel)]="searchString" [placeholder]="'common.search_here' | translate" (change)="onSearch($event)" (input)="onSearch($event)">
+    </div>
+    <div class="cls-userpreferences cls-dialog">
+        <p-table reorderableRows="true" (onRowReorder)="onRowReorder($event)"
+            [value]="selectedColumns ?? []" styleClass="cls-100pc" scrollHeight="400px"
+            [scrollable]="true">
+            <ng-template pTemplate="body" let-columnDetails let-index="rowIndex">
+                <tr [pReorderableRow]="index">
+                    <td>
+                        <span id="_id_edit_company_icon">
+                            <p-checkbox [(ngModel)]="columnDetails.isSelected" [disabled]="columnDetails.isRequired == true" [binary]="true" inputId="binary" />
+                        </span>
+                    </td>
+                    <td *ngIf="!columnDetails.canEditColumnHeader">
+                        <span  class="cls-ellipsis cls-userpreferences-name">{{columnDetails.columnDisplayName}}</span>
+                    </td>
+                    <td *ngIf="columnDetails.canEditColumnHeader">
+                        <input type="text" #columnDisplayName pInputText [(ngModel)]="columnDetails.columnDisplayName" [placeholder]="'userpreferences.column_display_name' | translate" [title]="'userpreferences.column_title' | translate" (keydown.enter)="toggleEditColumnHeader(columnDetails)">
+                    </td>
+                    <td>
+                        <i class="pi pi-pen-to-square" [class.pi-check]="columnDetails.canEditColumnHeader" (click)="editColumn(columnDetails)" [title]="'common.edit' | translate"></i>
+                    </td>
+                    <td *ngIf="canSelectVisibility == true">
+                        <i class="fa-solid fa-user-check" [class.selectedVisibility]="canShowToUser(columnDetails)" [title]="'userpreferences.visible_to_user' | translate" (click)="toggleVisibility(columnDetails)"></i>
+                    </td>
+                    <td>
+                        <i class="pi pi-thumbtack" [class.selectedPin]="isPinned(columnDetails)" (click)="togglePinned(columnDetails)"  [title]="getPinTitle(columnDetails) | translate"></i>
+                    </td>
+                    <td>
+                        <i class="fa-solid fa-bars" pReorderableRowHandle [title]="'common.drag' | translate"></i>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <div class="cls-dialog-footer-row">
+        <button type="button" pButton pRipple label="{{ 'items.cancel' | translate }}" id="_id_cancelcomp_btn"
+            severity="secondary" (click)="closeDialog()">
+        </button>
+        &nbsp;&nbsp;
+        <button type="button" pButton pRipple label="{{ 'userpreferences.savepreferences' | translate }}" id="_id_createcomp_btn"
+            class="p-button-primary" (click)="savePreferences()">
+        </button>
+    </div>
+</div>

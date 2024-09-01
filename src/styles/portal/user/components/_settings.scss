@@ -1,0 +1,52 @@
+.cls-settins-page {
+    .cls-full-width {
+        width: $w-100per;
+        height: 100%;
+    }
+    .cls-padding {
+        padding: 15px;
+    }
+    .cls-limit-height {
+        height: calc(100vh - 165px);
+        overflow: auto;
+    }
+    .cls-config-row {
+        width: 100%;
+        display: flex;
+        margin-bottom: 4px;
+
+        .cls-key {
+            width: 30%;
+            display: flex;
+            float: left;
+            input {
+                width: 100%;
+            }
+            margin-right: 20px;
+            border: 1px solid lightgrey;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .cls-value {
+            width: 30%;
+            display: flex;
+            float: left;
+            input {
+                width: 100%;
+            }
+            margin-right: 20px;
+            border: 1px solid lightgrey;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .cls-secret {
+            width: 20%;
+            display: flex;
+            float: left;
+            input {
+                width: 100%;
+            }
+            margin-right: 20px;
+        }
+    }
+}

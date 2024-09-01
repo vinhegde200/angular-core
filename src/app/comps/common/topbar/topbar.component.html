@@ -1,0 +1,18 @@
+<div id="_topbar_common" class="cls-topbar">
+    <div class="top-left">
+        <p-button icon="pi pi-bars" styleClass="slidebar-btn" (click)="showLargeMenu()"/>
+        <span id="_topbar-title-text" class="cls-topbar-title">{{title}}</span>
+    </div>
+
+    <div class="top-middle"></div>
+
+    <div class="top-action-btn top-right">
+        <div id="_topbar-avatar" class="cls-avatar action-btn" (click)="menu.toggle($event)">
+            <i class="pi pi-user"></i>
+        </div>
+        <span class="action-btn help-btn">
+            <i class="pi pi-question"></i>
+        </span>
+    </div>
+</div>
+<p-menu #menu [model]="items" [popup]="true" styleClass="top-user-dd"></p-menu>

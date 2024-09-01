@@ -1,0 +1,18 @@
+<div id="_id-left-pane" class="cls-app-left-pane">
+    <span class="cls-logo"><img src="../../../../../assets/logos/suite_symbol.svg" alt="logo"></span>
+    <ul class="left-menu-items">
+        <li *ngFor="let menu of menuitems" (click)="handleClick(menu)" [class.active]="selectedItem == menu">
+            <span [class]="menu.icon"></span>    
+        </li>
+    </ul>
+</div>
+
+<p-sidebar [(visible)]="sidebarVisible" styleClass="slide-bar-menu">
+    <span class="slide-logo"><img src="../../../../assets/logos/suite_symbol.svg" alt="logo"></span>
+    <ul class="left-menu-items">
+        <li class="active" *ngFor="let menu of menuitems"  (click)="handleClick(menu)" [class.active]="selectedItem == menu">
+            <span [class]="menu.icon"></span>    
+            <span class="item-text">{{(menu.label || '') | translate}}</span>
+        </li>
+    </ul>
+</p-sidebar>

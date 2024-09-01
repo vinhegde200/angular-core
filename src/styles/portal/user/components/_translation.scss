@@ -1,0 +1,56 @@
+.cls-txn-container {
+    display: flex;
+    .cls-lang-list {
+        width: 330px;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .cls-lang-details {
+        width: calc(100% - 300px);
+    }
+
+    .cls-new-lang {
+        margin-left: 10px;
+    }
+
+    .cls-lang-details-hdr{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .cls-lang-details-table{
+        margin-left: 0.5rem;
+    }
+    .cls-new-lang {
+        margin-left: 10px;
+    }
+
+
+
+    .cls-lang-names-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cls-selected-lang {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        .cls-sel-lang-str {
+            font-size: 1rem;
+            font-weight: normal;
+            color: $shade700;
+        }
+        .cls-upload-download {
+            display: flex;
+            gap: .5rem;
+        }
+    }
+
+    .cls-lang-buttons {
+        display: flex;
+    }
+}

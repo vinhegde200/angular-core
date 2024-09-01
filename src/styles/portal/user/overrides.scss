@@ -1,0 +1,97 @@
+// @import "./variables.scss";
+
+/**
+    This file should contain all classes that override primeng
+    classes.
+*/
+
+.p-datatable {
+    .p-datatable-tbody {
+        > tr {
+            min-height: 42px;
+            &:nth-child(even) {
+                background-color: $userTableRowBg;
+            }
+            &:hover{
+                background-color: $userTableRowHoverBg;
+            }  
+            td{
+                border-color: transparent;
+                padding: .35rem .5rem;
+                height: 42px;
+            }          
+        }        
+    }
+}
+.p-treenode-label {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.p-treenode-children {
+    .p-treenode-label {
+        font-weight: 400;
+    } 
+}
+
+button{
+    &.cls-large-btn{
+        min-width: $userButtonWidth;
+        height: $userButtonHeight;
+        border-radius: $userButtonRadus;
+    }
+}
+
+.p-tabview {
+    .p-tabview-panels{
+        padding: 15px 0 0 0;
+    }
+}
+.p-datatable{
+    min-height: 300px;
+    .p-paginator-bottom{
+        padding: 4px 8px;
+        box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1) !important;
+        border: none;
+        .p-paginator-page, .p-paginator-first, .p-paginator-last, .p-paginator-prev, .p-paginator-next{
+            height: 28px;
+            width: 28px;
+            min-width: 28px;
+        }
+        
+    }
+}
+.c-form-field {
+    .p-dropdown{
+        width: 100%;
+    }
+}
+.p-checkbox {
+    .p-checkbox-box {
+        .p-checkbox-icon{
+            color: $shade000;
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+.p-dialog {
+    .p-dialog-header{
+        border-top-right-radius: 0.5rem;
+        border-top-left-radius: 0.5rem;
+        border-bottom: 1px solid $clsBorder;
+
+    }
+    .p-dialog-content:last-of-type {
+        border-bottom-right-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+    }
+}
+.p-button-outlined {
+    background: $shade000;
+    &:not(:disabled):hover {
+        background: $buttonBg;
+        color: $buttonTextColor;
+    }
+}

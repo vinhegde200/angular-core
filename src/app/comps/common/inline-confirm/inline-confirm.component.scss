@@ -1,0 +1,17 @@
+.cls-confirm-container {
+    width: 100%;
+    .cls-confirm-icon {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        i {
+            font-size: 2rem;
+        }
+    }
+
+    .cls-confirm-msg {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}

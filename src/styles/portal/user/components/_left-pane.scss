@@ -1,0 +1,54 @@
+.cls-app-left-pane {
+    width: 48px;
+    height: 100vh;
+    background: $leftSidebarBg;
+    position: relative;
+    
+    .cls-logo {
+        width: auto;
+        height: 50px;
+        display: block;
+    }    
+}
+
+ul{
+    &.left-menu-items{
+        list-style: none;
+        text-align: center;   
+        padding: 0;     
+        margin: 0;
+        li{
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            color: $leftSidebarTextColor;
+            &.active{
+                background-color: $highlightBg;
+                span{
+                    color: $shade000;
+                }
+            }
+            &:hover{
+                background-color: $leftMenuHoverBg;
+                color: $leftMenuHoverTextColor;
+            }
+            span{                    
+                font-size: 24px;
+                width: 48px;
+                &.item-text{
+                    font-size: 14px;
+                    text-transform: capitalize;
+                    text-align: left;
+                }
+            }
+            &:last-child{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+}

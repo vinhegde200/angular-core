@@ -1,0 +1,25 @@
+<div class="c-login-container" id="_login_container">
+    <div class="c-right-login">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="c-form-field">
+                <label id="_loginid_label">Username</label>
+                <input id="_loginid" type="text" pInputText class="c-loginid" formControlName="loginid"/>
+            </div>
+            <div class="c-form-field">
+                <label id="_password_label">Password</label>
+                <input id="_password" type="password" pInputText class="c-password" formControlName="password"/>
+            </div>
+            <div class="c-button-row">
+                <button pButton pRipple label="{{ 'login.login' | translate }}" id="_login-button"
+                    [disabled]="!loginForm.valid"
+                    class="p-button-primary c-btn-full-width" type="Submit">
+                </button>
+            </div>
+            @if (errormsg) {
+                <div class="c-msg-row">
+                    <span id="_login-error-msg" class="c-spn-error-msg">{{errormsg}}</span>
+                </div>
+            }
+        </form>
+    </div>
+</div>

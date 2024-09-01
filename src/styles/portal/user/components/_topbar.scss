@@ -1,0 +1,43 @@
+.cls-topbar {
+    height: 50px;
+    box-shadow: 0 1px 3px var(--boxShodowLight);
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    .top-left{
+        display: flex;
+        align-items: center;
+    }
+    .top-right{
+        display: flex;
+        align-items: center;
+    }
+
+    .cls-topbar-title {
+        margin-left: 10px;
+        font-size: 20px;
+        width: 100%;
+        color: $shade700;
+        font-weight: $font-weight-normal;
+    }
+
+    .top-action-btn {
+        .action-btn {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $shade400;
+            border: 1px solid $shade400;
+            border-radius: 50px;
+            margin-left: 10px;
+            cursor: pointer;
+            &:hover{
+                background-color: $secondaryColor;
+            }
+        }
+    }
+}

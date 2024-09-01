@@ -1,0 +1,23 @@
+<div id="_id-setup-container-div" class="cls-initial-setup">
+    <div id="_id-steps-div" class="cls-steps-section">
+        <div class="steps-logo">
+            <img src="../../../../assets/logos/setup/suit-logo.svg" alt="">
+        </div>
+        <div class="cls-left-header">
+            Packaging Portal Setup
+        </div>
+        <div id="_id-steps-container-div" class="cls-steps-container">
+            <div *ngFor="let s of steps" class="cls-step cls-step-line-container ">
+                <span [class.completed]="!errSections.includes(s.stepNumber)">
+                    <div class="cls-in-step">{{s.stepNumber}}</div>
+                </span>
+                <span>
+                    {{s.label}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div id="_id-setup-div" class="cls-setup-section">
+        <app-setup (validations)="validationErrors($event)"></app-setup>
+    </div>
+</div>

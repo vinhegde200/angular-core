@@ -1,0 +1,63 @@
+
+// @import "./variables.scss";
+
+.cls-dialog-container {
+    .cls-modal-header {
+        color: $shade1003;
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 10px 1rem;
+    }
+
+    .cls-modal-sub-header {
+        font-size: .875rem;
+        color: $shade1003;
+        font-weight: normal;
+        margin-bottom: 10px;
+    }
+
+    .cls-dialog {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        margin: 10px .5rem;
+
+        .cls-left-pane {
+            width: calc(50% - 35px);
+            max-width: calc(50% - 35px);
+            min-width: calc(50% - 35px);
+            border: 1px solid $shade1014;
+            padding: 10px;
+            border-radius: $borderRadius;
+            min-height: 250px;
+            margin: 0px .5rem;
+        }
+
+        .cls-action-items {
+            display: flex;
+            align-items: center;
+            span{
+                width: 32px;
+                height: 32px;
+                color: $shade500;
+                background: $shade300;
+                border-radius: 50px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+        }
+        .cls-right-pane {
+            width: calc(50% - 35px);
+            max-width: calc(50% - 35px);
+            min-width: calc(50% - 35px);
+            border: 1px solid $shade1014;
+            padding: 10px;
+            border-radius: $borderRadius;
+            min-height: 250px;
+            margin: 0px .5rem;
+        }
+    }
+}

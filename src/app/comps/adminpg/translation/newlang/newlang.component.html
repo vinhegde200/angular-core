@@ -1,0 +1,22 @@
+<div id="_id-new-lang-container" class="cls-new-lang">
+    <form [formGroup]="newLangForm" (ngSubmit)="createLanguage()">
+        @if (copyfrommsg != null) {
+        <div id="_id-copy-from-msg" class="cls-copy-from" [innerHtml]="copyfrommsg">
+        </div>
+        }
+        <div class="c-form-field">
+            <label id="_lang_label" translate>newlang.langcode</label>
+            <input id="_langcode" type="text" pInputText class="c-lang" formControlName="lang"/>
+        </div>
+        <div class="c-form-field">
+            <label id="_langstr_label" translate>newlang.langname</label>
+            <input id="_langstr" type="text" pInputText class="c-langstr" formControlName="langstr"/>
+        </div>
+        <div class="c-button-row">
+            <button pButton pRipple label="{{ 'newlang.save' | translate }}" id="_newlang-button"
+                [disabled]="!newLangForm.valid"
+                class="p-button-primary c-btn-full-width" type="Submit">
+            </button>
+        </div>
+    </form>
+</div>

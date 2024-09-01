@@ -1,0 +1,216 @@
+<form [formGroup]="setupForm" (submit)="startSetup()" style="width: 100%">
+                <div class="form-group cls-form-container">
+                    <div class="cls-flex-layout">
+                        <div class="c-form-field cls-width30pc">
+                            <div class="c-form-field-name">
+                                <label id="_compname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Keycloak Admin User
+                                </label>
+                            </div>
+                            <input id="_compname" type="text" pInputText class="c-company-name" formControlName="keyCloakAdmin"/>
+                            @if (setupForm.controls.keyCloakAdmin.errors && 
+                                (setupForm.controls.keyCloakAdmin.dirty || 
+                                setupForm.controls.keyCloakAdmin.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin username is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width30pc">
+                            <div class="c-form-field-name">
+                                <label id="_compname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Keycloak Admin Password
+                                </label>
+                            </div>
+                            <input id="_compname" type="text" pInputText class="c-company-name" formControlName="keyCloakPassword"/>
+                            @if (setupForm.controls.keyCloakPassword.errors && 
+                                (setupForm.controls.keyCloakPassword.dirty || 
+                                setupForm.controls.keyCloakPassword.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin password is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width30pc">
+                            <div class="c-form-field-name">
+                                <label id="_compname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Keycloak Admin client name
+                                </label>
+                            </div>
+                            <input id="_compname" type="text" pInputText class="c-company-name" formControlName="keyCloakAdminClient"/>
+                            @if (setupForm.controls.keyCloakAdminClient.errors && 
+                                (setupForm.controls.keyCloakAdminClient.dirty || 
+                                setupForm.controls.keyCloakAdminClient.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin client is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                    </div>
+                    <div class="cls-flex-layout">
+                        <div class="c-form-field cls-width30pc">
+                            <div class="c-form-field-name">
+                                <label id="_compname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Keycloak URL
+                                </label>
+                            </div>
+                            <input id="_compname" type="text" pInputText class="c-company-name" formControlName="identityMgmtUrl"/>
+                            @if (setupForm.controls.identityMgmtUrl.errors && 
+                                (setupForm.controls.identityMgmtUrl.dirty || 
+                                setupForm.controls.identityMgmtUrl.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Keycloak url required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width30pc">
+                            <div class="c-form-field-name">
+                                <label id="_compname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Realm
+                                </label>
+                            </div>
+                            <input id="_compname" type="text" pInputText class="c-company-name" formControlName="realm"/>
+                            @if (setupForm.controls.realm.errors && 
+                                (setupForm.controls.realm.dirty || 
+                                setupForm.controls.realm.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Realm is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width30pc">
+                            <div class="c-form-field-name">
+                                <label id="_compname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Application Name
+                                </label>
+                            </div>
+                            <input id="_compname" type="text" pInputText class="c-company-name" formControlName="appName"/>
+                            @if (setupForm.controls.appName.errors && 
+                                (setupForm.controls.appName.dirty || 
+                                setupForm.controls.appName.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Application name is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                    </div>
+                    <div class="cls-flex-layout">
+                        <div class="c-form-field cls-width30pc">
+                            <div class="c-form-field-name">
+                                <label id="_compname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Application URL
+                                </label>
+                            </div>
+                            <input id="_compname" type="text" pInputText class="c-company-name" formControlName="appUrl"/>
+                            @if (setupForm.controls.appUrl.errors && 
+                                (setupForm.controls.appUrl.dirty || 
+                                setupForm.controls.appUrl.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Application URL is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width30pc">
+                            <div class="c-form-field-name">
+                                <label id="_compname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Admin Username
+                                </label>
+                            </div>
+                            <input id="_compname" type="text" pInputText class="c-company-name" formControlName="adminUserName"/>
+                            @if (setupForm.controls.adminUserName.errors && 
+                                (setupForm.controls.adminUserName.dirty || 
+                                setupForm.controls.adminUserName.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin username required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width30pc">
+                            <div class="c-form-field-name">
+                                <label id="_compname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Admin Password
+                                </label>
+                            </div>
+                            <input id="_compname" type="text" pInputText class="c-company-name" formControlName="adminUserPassword"/>
+                            @if (setupForm.controls.adminUserPassword.errors && 
+                                (setupForm.controls.adminUserPassword.dirty || 
+                                setupForm.controls.adminUserPassword.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin password required' | translate}}
+                                </span>
+                            }
+                        </div>
+                    </div>
+                    <div class="cls-flex-layout">
+                        <div class="c-form-field cls-width30pc">
+                            <div class="c-form-field-name">
+                                <label id="_compname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Admin Firstname
+                                </label>
+                            </div>
+                            <input id="_compname" type="text" pInputText class="c-company-name" formControlName="firstName"/>
+                            @if (setupForm.controls.firstName.errors && 
+                                (setupForm.controls.firstName.dirty || 
+                                setupForm.controls.firstName.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin Firstname required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width30pc">
+                            <div class="c-form-field-name">
+                                <label id="_compname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Admin Lastname
+                                </label>
+                            </div>
+                            <input id="_compname" type="text" pInputText class="c-company-name" formControlName="lastName"/>
+                            @if (setupForm.controls.lastName.errors && 
+                                (setupForm.controls.lastName.dirty || 
+                                setupForm.controls.lastName.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin Lastname required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width30pc">
+                            <div class="c-form-field-name">
+                                <label id="_compname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Admin Email
+                                </label>
+                            </div>
+                            <input id="_compname" type="text" pInputText class="c-company-name" formControlName="adminUserEmail"/>
+                            @if (setupForm.controls.adminUserEmail.errors && 
+                                (setupForm.controls.adminUserEmail.dirty || 
+                                setupForm.controls.adminUserEmail.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin Email required' | translate}}
+                                </span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </form>

@@ -1,0 +1,13 @@
+<div id="_id-config-row" class="cls-config-row">
+    <form [formGroup]="configRow" style="width: 100%">
+        <div class="cls-key">
+            <input id="_id-key" type="text" pInputText class="c-key" formControlName="key"/>
+        </div>
+        <div class="cls-value">
+            <input id="_id-value" type="text" pInputText class="c-value" formControlName="value"/>
+        </div>
+        <div class="cls-secret">
+            <p-checkbox  [binary]="true" inputId="binary" formControlName="secret"></p-checkbox>
+        </div>
+    </form>
+</div>

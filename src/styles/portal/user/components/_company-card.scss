@@ -1,0 +1,80 @@
+.cls-company-card {
+    position: relative;
+    min-width: 200px;
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--secondaryShadowColor);
+    padding: 15px;
+    cursor: pointer; 
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    overflow: hidden;
+    &::before {
+        content: '';
+        border-left: 3px solid $orange;
+        position: absolute;
+        height: 35%;
+        left: 0;
+        top: 1px;
+        border-top-left-radius: 6px;
+    }
+
+    &:hover{
+        box-shadow: 0 0 3px 3px var(--shadowColor)
+    }
+    .card-company-log{
+        height: 60px;
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        img{
+            height: auto;
+            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .cls-action-menu {
+        font-size: 12px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        cursor: pointer;        
+    }
+
+    .cls-missing-img {
+        font-size: 32px;
+        color: grey;
+        font-weight: 100;
+    }
+
+    .cls-company-name {
+        color: $shade700;
+        font-size: $font-size-20px;
+        font-weight: $font-weight-bold;
+        text-transform: capitalize;
+        margin-bottom: 5px;
+    }
+
+    .cls-contact-name {
+        span{
+            &:nth-child(1) {
+                margin-right: 5px;
+                font-size: 12px;
+                color: $shade800;
+                font-weight: $font-weight-normal;
+            }
+        }
+        span{
+            &:nth-child(2) {
+                font-size: 1rem;
+                color: $shade700;
+                font-weight: $font-weight-semibold;
+            }
+        }
+    }
+}

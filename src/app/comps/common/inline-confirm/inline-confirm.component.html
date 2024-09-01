@@ -1,0 +1,13 @@
+
+<p-confirmPopup>
+    <ng-template pTemplate="content" let-message>
+        <div class="cls-confirm-container">
+            <div class="cls-confirm-icon">
+                <i [class]="message.icon"></i>
+            </div>
+            <div class="cls-confirm-msg">
+                {{ message.message }}
+            </div>
+        </div>
+    </ng-template>
+</p-confirmPopup>

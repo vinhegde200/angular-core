@@ -1,0 +1,113 @@
+:root {
+    --userBodyBg: $page-background-color;
+}
+
+$primaryColor: $primary-color;
+$primaryDarkColor: $primary-dark-color;
+$primaryTextColor: $text-color;
+$secondaryTextColor: $text-color;
+$secondaryColor: $action-btn-background;
+$highlightTextColor: $footer-color;
+$userBodyBg: $page-background-color;
+$userTableHeadBg: $grid-header-color;
+$userTableRowBg: $grid-row-alternate-color;
+$userTableBorderColor: $grid-header-color;
+$shade000: #ffffff;
+$shade100: $userTableHeadBg !default;
+$shade200: $primaryColor !default;
+$shade300: $grid-row-alternate-color;
+$shade400: $icon-color;
+$shade500: $icon-color;
+$shade600: $icon-color;
+$shade700: $text-color;
+$shade800: #78909c !default;
+$shade900: #18181b !default;
+$shade1001: $grid-row-selected-background-color;
+$userTableRowHoverBg: $grid-row-selected-background-color;
+$shade1002: $setup-complete;
+$shade1003: $text-color;
+$shade1004: #DEEBFF;
+$shade1005: $icon-background;
+$shade1006: $setup-background;
+$shade1007: $setup-complete;
+$shade1008: $icon-color;
+$shade1010: #979797;
+$shade1011: $company-card-border;
+$shade1012: $shadow;
+$shade1013: $shadow;
+$shade1014: $popup-border;
+$leftSidebarBg: $text-color;
+$leftSidebarTextColor: $side-bar-text;
+$leftMenuHoverBg: $side-bar-hover;
+$leftMenuHoverTextColor: $header-menu-color;
+$formFieldLabel: $text-color;
+$actionBtnBorder: $grid-row-select-background;
+$validationColor: $error-color;
+$shade1016: $date-input-title;
+$shade1017: #dfdfdf; 
+
+:root {
+    --shadowColor: #0054fd80;
+    --secondaryShadowColor: #cfd8dc;
+    --boxShodowLight : #00000026; 
+    --bodyBgColor : #eef1f5;
+    --themeTextColor: #253238;
+}
+
+// font family 
+$font-family: 'SF UI Display', sans-serif;
+
+$leftSidebarBg: var(--themeTextColor);
+$leftSidebarTextColor: #90A4AE;
+$leftMenuHoverBg: #000;
+$leftMenuHoverTextColor: #fff;
+$formFieldLabel: var(--themeTextColor);
+$actionBtnBorder: #56A1D5;
+
+// theme color variables
+$white: #ffffff;
+$orange: #F7722A;
+
+// font weight variables
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+// fonts size variables
+$font-size-8px : 0.5rem;
+$font-size-10px : 0.625rem;
+$font-size-12px : 0.75rem;
+$font-size-14px : 0.875rem;
+$font-size-16px : 1rem;
+$font-size-18px : 1.125rem;
+$font-size-20px : 1.25rem;
+$font-size-22px : 1.375rem;
+$font-size-24px : 1.5rem;
+$font-size-26px : 1.625rem;
+$font-size-28px : 1.75rem;
+$font-size-30px : 1.875rem;
+$font-size-32px : 2rem;
+$font-size-34px : 2.125rem;
+$font-size-36px : 2.25rem;
+$font-size-45px : 2.8125rem;
+
+// width 
+$w-100per : 100%;
+// $w-100px : 100px;
+
+$validationColor: #E02020;
+$tdMaxWidth: 100px;
+
+// new user varibles
+// $userBodyBg: #F2F8FB;
+
+$userButtonRadus: 0px;
+$userButtonHeight: 45px;
+$userButtonWidth: 200px;
+
+$clsBorder: #cfd8dc;
+
+

@@ -1,0 +1,45 @@
+.cls-url-info {
+    .cls-info-header {
+        font-size: 1rem;
+        font-weight: 500;
+        color: $primaryTextColor;
+        margin-bottom: 15px;
+    }
+
+    .cls-info-text {
+        font-size: .875rem;
+        color: $shade400;
+        font-weight: normal;
+    }
+
+    .cls-info-url {
+        margin-top: 10px;
+        border: 1px solid $shade400;
+        border-radius: 4px;
+        display: inline-flex;
+        align-items: center;
+        height: 25px;
+        font-size: .875rem;
+        span{
+            height: 100%;
+            background: $shade1010;
+            line-height: 14px;
+            padding: 5px;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            color: $primaryTextColor;
+        }
+        input {
+            border: none;
+            color: $primaryTextColor;
+            &:focus-visible {
+                outline: -webkit-focus-ring-color auto 0px;
+            }
+        }
+        i{
+            margin-right: .5rem;
+            color: $shade400;
+            
+        }
+    }
+}

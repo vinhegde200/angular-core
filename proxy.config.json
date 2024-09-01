@@ -1,0 +1,14 @@
+{
+    "/api/localadmin": {
+      "target": "http://localhost:5029",
+      "secure": false
+    },
+    "/api": {
+      "target": "http://localhost:5033",
+      "secure": false
+    },
+    "/automator": {
+      "target": "http://mdm-devserver.epsqa.epssw.net:8083",
+      "secure": false
+    }
+}

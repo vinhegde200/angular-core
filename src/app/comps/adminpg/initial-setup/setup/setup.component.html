@@ -1,0 +1,420 @@
+<div id="_id_setup_container" class="cls-setup-page-container">
+    <!-- <div id="_id_comp_details_header" class="cls-page-header">
+        <span class="page-title">
+            Intial Portal setup
+        </span>
+        <span class="cls-actions">
+        </span>
+    </div> -->
+    <div id="_id_settings" class="cls-setup-main-container">
+        <div class="cls-setup-main-area">
+            <div id="_id-setup-container" class="cls-setup-container">
+                
+                <form [formGroup]="setupForm" (submit)="startSetup()">
+                    @if (setupIndex == 0) {
+                        <div id="_id-step-header1" class="cls-step-header">
+                            <span class="cls-setup-container-img"><img src="../../../../../assets/logos/setup/Keylogin.svg" alt=""></span>
+                            <div class="cls-step-head">Keycloak login</div>
+                           <div class="cls-step-subhead">Provide keycloak login details. These are the credentials provided while setting up Keycloak 
+                            Identity management system</div>
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_keyurl_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Keycloak URL
+                                </label>
+                            </div>
+                            <input id="_keycloak_url" type="text" pInputText class="cls-form-input" formControlName="identityMgmtUrl"/>
+                            @if (setupForm.controls.identityMgmtUrl.errors && 
+                                (setupForm.controls.identityMgmtUrl.dirty || 
+                                setupForm.controls.identityMgmtUrl.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Keycloak url is blank or not valid' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_keyurl_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Keycloak External URL
+                                </label>
+                            </div>
+                            <input id="_keycloak_url" type="text" pInputText class="cls-form-input" formControlName="keycloakExtUrl"/>
+                            @if (setupForm.controls.keycloakExtUrl.errors && 
+                                (setupForm.controls.keycloakExtUrl.dirty || 
+                                setupForm.controls.keycloakExtUrl.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Keycloak Ext url is blank or not valid' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_key_admin_client_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Keycloak Admin client name
+                                </label>
+                            </div>
+                            <input id="_id-key-admin-client" type="text" pInputText class="cls-form-input" formControlName="keyCloakAdminClient"/>
+                            @if (setupForm.controls.keyCloakAdminClient.errors && 
+                                (setupForm.controls.keyCloakAdminClient.dirty || 
+                                setupForm.controls.keyCloakAdminClient.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin client is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_admin_user_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Keycloak Admin User
+                                </label>
+                            </div>
+                            <input id="_id-admin-user" type="text" pInputText class="cls-form-input" formControlName="keyCloakAdmin"/>
+                            @if (setupForm.controls.keyCloakAdmin.errors && 
+                                (setupForm.controls.keyCloakAdmin.dirty || 
+                                setupForm.controls.keyCloakAdmin.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin username is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_admin_pass_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Keycloak Admin Password
+                                </label>
+                            </div>
+                            <input id="_id_admin_pass" type="password" pInputText class="cls-form-input" formControlName="keyCloakPassword"/>
+                            @if (setupForm.controls.keyCloakPassword.errors && 
+                                (setupForm.controls.keyCloakPassword.dirty || 
+                                setupForm.controls.keyCloakPassword.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin password is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div id="_id-setup-buttons" class="cls-setup-button">
+                            <div></div>
+                            <div>
+                                <button type="button" [outlined]="true" pButton pRipple id="_id_setup_next_btn"
+                                    [disabled]="setupForm.controls.identityMgmtUrl.errors || 
+                                                setupForm.controls.keyCloakAdminClient.errors ||
+                                                setupForm.controls.keyCloakAdmin.errors ||
+                                                setupForm.controls.keyCloakPassword.errors" 
+                                    severity="primary" (click)="showNext(1)">
+                                    Continue &nbsp;&nbsp;
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    }
+                    @if (setupIndex == 1) {
+                        <div id="_id-step-header2" class="cls-step-header">    
+                            <span class="cls-setup-container-img">
+                                <img src="../../../../../assets/logos/setup/application-url.svg" alt="">
+                            </span>                        
+                            <div class="cls-step-head">Application URL</div>
+                           <div class="cls-step-subhead">Please provide your Application details on this page.</div>
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_app_url_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Application URL
+                                </label>
+                            </div>
+                            <input id="_id_app_url" type="text" pInputText class="cls-form-input" formControlName="appUrl"/>
+                            @if (setupForm.controls.appUrl.errors && 
+                                (setupForm.controls.appUrl.dirty || 
+                                setupForm.controls.appUrl.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Application URL is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_realm_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Realm for the app
+                                </label>
+                            </div>
+                            <input id="_id_realm" type="text" pInputText class="cls-form-input" formControlName="realm"/>
+                            @if (setupForm.controls.realm.errors && 
+                                (setupForm.controls.realm.dirty || 
+                                setupForm.controls.realm.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Realm is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_app_name_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Application Name
+                                </label>
+                            </div>
+                            <input id="_id_app_name" type="text" pInputText class="cls-form-input" formControlName="appName"/>
+                            @if (setupForm.controls.appName.errors && 
+                                (setupForm.controls.appName.dirty || 
+                                setupForm.controls.appName.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Application name is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_ssl_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    SSL required
+                                </label>
+                            </div>
+                            <p-inputSwitch  id="_id_ssl-required" formControlName="sslRequired"/>
+                            @if (setupForm.controls.sslRequired.errors && 
+                                (setupForm.controls.sslRequired.dirty || 
+                                setupForm.controls.sslRequired.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Application name is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div id="_id-setup-buttons" class="cls-setup-button">
+                            <div>
+                                <button type="button" pButton pRipple id="_id_setup_next_btn"
+                                    severity="secondary" (click)="showNext(0)">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                    &nbsp;&nbsp;Back
+                                </button>
+                            </div>
+                            <div>
+                                <button type="button" [outlined]="true" pButton pRipple id="_id_setup_next_btn"
+                                    severity="primary" (click)="showNext(2)"
+                                    [disabled]="setupForm.controls.appUrl.errors ||
+                                                setupForm.controls.realm.errors ||
+                                                setupForm.controls.appName.errors">
+                                    Next &nbsp;&nbsp;
+                                    <i class="fa-solid fa-right-to-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    }
+                    @if (setupIndex == 2) {
+                        <div id="_id-step-header3" class="cls-step-header">
+                            <span class="cls-setup-container-img"><img src="../../../../../assets/logos/setup/create-first-admin.svg" alt=""></span>
+                            <div class="cls-step-head">Create First Admin</div>
+                           <div class="cls-step-subhead">Create first admin user for the application. You can login to the application using this ID and import data into portal</div>
+                           
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_admin_user_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Admin Username
+                                </label>
+                            </div>
+                            <input id="_id_admin_user" type="text" pInputText class="cls-form-input" formControlName="adminUserName"/>
+                            @if (setupForm.controls.adminUserName.errors && 
+                                (setupForm.controls.adminUserName.dirty || 
+                                setupForm.controls.adminUserName.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin username required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_admin_pass_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Admin Password
+                                </label>
+                            </div>
+                            <input id="_id_admin_pass" type="password" pInputText class="cls-form-input" formControlName="adminUserPassword"/>
+                            @if (setupForm.controls.adminUserPassword.errors && 
+                                (setupForm.controls.adminUserPassword.dirty || 
+                                setupForm.controls.adminUserPassword.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin password required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_admin_firstname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Admin Firstname
+                                </label>
+                            </div>
+                            <input id="_id_admin_firstname" type="text" pInputText class="cls-form-input" formControlName="firstName"/>
+                            @if (setupForm.controls.firstName.errors && 
+                                (setupForm.controls.firstName.dirty || 
+                                setupForm.controls.firstName.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin Firstname required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_admin_lastname_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Admin Lastname
+                                </label>
+                            </div>
+                            <input id="_id_admin_lastname" type="text" pInputText class="cls-form-input" formControlName="lastName"/>
+                            @if (setupForm.controls.lastName.errors && 
+                                (setupForm.controls.lastName.dirty || 
+                                setupForm.controls.lastName.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin Lastname required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_admin_email_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Admin Email
+                                </label>
+                            </div>
+                            <input id="_id_admin_email" type="text" pInputText class="cls-form-input" formControlName="adminUserEmail"/>
+                            @if (setupForm.controls.adminUserEmail.errors && 
+                                (setupForm.controls.adminUserEmail.dirty || 
+                                setupForm.controls.adminUserEmail.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Admin Email required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div id="_id-setup-buttons" class="cls-setup-button">
+                            <div>
+                                <button type="button" pButton pRipple id="_id_setup_next_btn"
+                                    severity="secondary" (click)="showNext(1)">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                    &nbsp;&nbsp;Back
+                                </button>
+                            </div>
+                            <div>
+                                <button type="button" [outlined]="true" pButton pRipple id="_id_setup_next_btn"
+                                    severity="primary" (click)="showNext(3)"
+                                    [disabled]="setupForm.controls.adminUserName.errors ||
+                                                setupForm.controls.adminUserPassword.errors ||
+                                                setupForm.controls.firstName.errors ||
+                                                setupForm.controls.lastName.errors ||
+                                                setupForm.controls.adminUserEmail.errors">
+                                    Next &nbsp;&nbsp;
+                                    <i class="fa-solid fa-right-to-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    }
+                    @if (setupIndex == 3) {
+                        <div id="_id-step-header4" class="cls-step-header">
+                            <span class="cls-setup-container-img"><img src="../../../../../assets/logos/setup/create-first-tenant.svg" alt=""></span>
+                            <div class="cls-step-head">Create First Tenant</div>
+                            <div class="cls-step-subhead">Create first Tenant. Specify a name for your Tenant.</div>
+                            
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_tenant_name_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Tenant Name
+                                </label>
+                            </div>
+                            <input id="_id_tenant_name" type="text" pInputText class="cls-form-input" formControlName="company"/>
+                            @if (setupForm.controls.company.errors && 
+                                (setupForm.controls.company.dirty || 
+                                setupForm.controls.company.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Tenant name is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div class="c-form-field cls-width-100per">
+                            <div class="c-form-field-name">
+                                <label id="_id_tenant_url_label" translate>
+                                    <sup><i class="fa-solid fa-asterisk"></i>
+                                    </sup>
+                                    Tenant ERP Endpoint
+                                </label>
+                            </div>
+                            <input id="_id_tenant_url" type="text" pInputText class="cls-form-input" formControlName="erpUrl"/>
+                            @if (setupForm.controls.erpUrl.errors && 
+                                (setupForm.controls.erpUrl.dirty || 
+                                setupForm.controls.erpUrl.touched)) {
+                                <span id="_id_name_validation_error" class="c-validation-error">
+                                    {{'Tenant Erp URL is required' | translate}}
+                                </span>
+                            }
+                        </div>
+                        <div id="_id-setup-buttons" class="cls-setup-button">
+                            <div>
+                                <button type="button" pButton pRipple id="_id_setup_next_btn"
+                                    severity="secondary" (click)="showNext(2)">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                    &nbsp;&nbsp;Back
+                                </button>
+                            </div>
+                            <div>
+                                <button type="button" [outlined]="true" pButton pRipple id="_id_setup_next_btn"
+                                    severity="primary" (click)="completeSetup()"
+                                    [disabled]="isSectionHavingError(4)">
+                                    Complete setup
+                                </button>
+                            </div>
+                        </div>
+                    }
+                    @if (setupIndex == 4 && setupCompleted) {
+                        <div class="cls-complete-setup">
+                            <div id="_id-step-header5" class="cls-step-big-header">
+                                Welcome {{welcomeUser}}
+                            </div>
+                            <div id="_id_success_message" class="cls-success-section">
+                                Setup completed successfully.
+                            </div>
+                            <div class="cls-step-subhead">Please restart the application before proceeding. After restarting the instance you can login to instance as Admin user</div>
+                            <div id="_id-login-button" class="cls-login-button">
+                                <button type="button" pButton pRipple id="_id_setup_login_btn"
+                                    severity="primary" (click)="gotoLogin()">
+                                    Login now
+                                </button>
+                            </div>
+                        </div>
+                        
+                        
+                    }
+                    @if (setupIndex == 4 && !setupCompleted) {
+                        <div id="_id-step-header5" class="cls-step-header">
+                            Setup is still pending.
+                        </div>
+                        <div id="_id_success_message" class="cls-success-section">
+                            Setup is not completed yet. Please enter all values and complete the setup.
+                        </div>
+                    }   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

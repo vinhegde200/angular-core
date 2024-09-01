@@ -1,0 +1,67 @@
+// @import "./variables.scss";
+
+/**
+    This file should contain all media queries for making the
+    pages responsive
+*/
+
+@media (max-width: 1200px) {
+    .cls-company-container{
+        .cls-company-list{
+          .cls-company-list-card{
+            width: calc(100% / 3) !important;
+          }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .cls-company-container{
+        .cls-company-list{
+          .cls-company-list-card{
+            width: calc(100% / 2) !important;
+          }
+        }
+    }
+}
+@media (max-width: 600px) {
+    .cls-left-pane {
+        display: none;
+    }
+    .cls-main-area{
+        width: calc(100% - 0px) !important;
+    }
+    .cls-companies-header{
+        flex-direction: column;
+        .page-title{
+            margin-bottom: 10px;
+        }
+    }
+    .cls-search-input{
+        .p-inputtext{
+            width: 100%;
+            min-width: 100% !important;
+        }
+    }
+    .cls-company-container{
+        .cls-company-list{
+            flex-direction: column;
+          .cls-company-list-card{
+            width: calc(100% / 1) !important;
+          }
+        }
+    }
+    .cls-add-company-container{
+        .cls-form-container{
+            flex-direction: column;
+            .cls-width30pc{
+                width: 100%;
+            }
+        }
+    }
+    .cls-company-list-dialog{
+        width: 90%;
+    }
+}
+
+

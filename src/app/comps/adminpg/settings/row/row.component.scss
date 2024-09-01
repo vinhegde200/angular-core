@@ -1,0 +1,33 @@
+.cls-config-row {
+    width: 100%;
+    display: flex;
+    margin-bottom: 4px;
+
+    .cls-key {
+        width: 40%;
+        display: flex;
+        float: left;
+        input {
+            width: 100%;
+        }
+        margin-right: 20px;
+    }
+    .cls-value {
+        width: 40%;
+        display: flex;
+        float: left;
+        input {
+            width: 100%;
+        }
+        margin-right: 20px;
+    }
+    .cls-secret {
+        width: 10%;
+        display: flex;
+        float: left;
+        input {
+            width: 100%;
+        }
+        margin-right: 20px;
+    }
+}

@@ -1,0 +1,13 @@
+<div id="_id-tx-row" class="cls-tx-row">
+    <form [formGroup]="txRow" style="width: 100%">
+        <div class="cls-tx-row">
+            <div class="cls-key">
+                <button class="fa-solid fa-trash cls-round-button"></button>             
+                <input id="_id-key" type="text" pInputText class="c-key" formControlName="key" [disabled]="true" />
+            </div>
+            <div class="cls-value" [class.dirty]="tx?.dirty">
+                <input id="_id-value" type="text" pInputText class="c-value" formControlName="value"/>
+            </div>
+        </div>
+    </form>
+</div>

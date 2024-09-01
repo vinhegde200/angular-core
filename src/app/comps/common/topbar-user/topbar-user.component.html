@@ -1,0 +1,47 @@
+<div id="_id-user-top-small" class="cls-user-topbar-small">
+    <span>24/7 Support 1-333-444-5544 
+        @if (hasAdminRole()) {
+        <a href="/#/customer/setup" class="cls-user-administrator-link">ADMINISTRATOR</a>
+        }
+    </span>
+    <app-theme-switcher></app-theme-switcher>
+    <span>Language:</span>
+</div>
+
+
+<div id="_topbar_common" class="cls-user-topbar">
+    <p-menubar [model]="pageMenu">
+        <ng-template pTemplate="start">
+            <div class="top-left">
+                <!-- <p-button icon="pi pi-bars" styleClass="slidebar-btn"/> -->
+                @if (branding?.logoSmall) {
+                <img [src]="branding?.logoSmall" class="cls-logo-small">
+                }
+                <span id="_topbar-title-text" class="cls-topbar-title">{{title}}</span>                
+            </div>
+        </ng-template>
+        <ng-template pTemplate="item" let-item let-root="root">
+            <a class="cls-menugroup">
+                <span class="cls-user-menugroup-link" (click)="showPage(item)">{{item.label || '' | translate}}</span>
+            </a>              
+        </ng-template>
+        <ng-template pTemplate="end">
+            <div class="top-action-btn top-right">
+                <div id="_topbar-avatar" class="cls-user cls-ellipsis" (click)="menu.toggle($event)">
+                    <i class="fa-solid fa-user"></i>
+                    <span>{{user?.userName}}</span>
+                </div>
+                <div id="_topbar-cart" class="cls-user">
+                    <!-- <app-shopping-cart></app-shopping-cart> -->
+                </div>
+                <div class="v-separator"></div>
+                <div id="_topbar-cart" class="cls-user">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notify"></span>
+                </div>
+            </div>
+        </ng-template>
+    </p-menubar>
+</div>
+
+<p-menu #menu [model]="items" [popup]="true" styleClass="top-user-dd"></p-menu>

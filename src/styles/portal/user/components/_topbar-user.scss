@@ -1,0 +1,70 @@
+.cls-user-topbar-small {
+    background-color: $userBodyBg;
+    height: 40px;
+    font-size: 0.875rem;
+    color: $secondaryTextColor;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    .cls-user-administrator-link{
+        margin-left: 30px;
+        color: $secondaryTextColor;
+        text-transform: capitalize;
+    }
+}
+.cls-user-topbar{
+    .top-left{
+        margin-right: 2rem;
+        display: flex;
+        align-items: center;
+    }
+    .cls-menugroup{
+        .cls-user-menugroup-link{
+            margin: 0 10px;
+        }
+
+    }
+    .top-right{
+        display: flex;
+        align-items: center;
+        .v-separator{
+            width: 1px;
+            background-color: $shade000;
+            margin-left: 15px;
+        }
+        .cls-user{
+            margin-left: 15px;
+            cursor: pointer;
+            position: relative;
+            max-width: 100px;
+            i{
+                margin-right: 6px;
+            }
+            .notify{
+                display: block;
+                height: 8px;
+                width: 8px;
+                background-color: red;
+                border-radius: 50px;
+                position: absolute;
+                top: 0;
+                right: 5px;
+            }
+        }
+    }
+
+    .cls-logo-small {
+        // max-height: 30px;
+        margin-right: 5px;
+        width: 100%;
+    }
+
+    .cls-menugroup {
+        margin-left: 10px;
+        span {
+            margin-right: 30px;
+        }
+    }
+}

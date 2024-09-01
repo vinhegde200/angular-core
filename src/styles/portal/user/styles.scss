@@ -1,0 +1,870 @@
+// @import "./variables.scss";
+
+body {
+    background-color: var(--bodyBgColor);
+    margin: 0px;
+}
+
+// .cls-border-top{
+//     border-top: 1px solid $shade400;
+// }
+
+// .cls-border-bottom{
+//     border-bottom: 1px solid $shade400;
+// }
+
+// .cls-marginR-10px{
+//     margin-right: 10px;
+// }
+
+// #region FORM FIELDS
+.cls-width30pc {
+    width: calc(100% / 3);
+}
+
+.c-form-field {
+    margin: 0.5rem;
+    text-transform: capitalize;
+    sup {
+        color: $validationColor;
+        font-size: $font-size-8px;
+        margin-right: 3px;
+    }
+    .c-form-field-name {
+        display: flex;
+        align-items: center;
+        margin-bottom: .5rem;       
+        margin-right: 0.5rem; 
+        .p-dropdown{
+            width: 100%;
+        }
+    }
+    .cls-form-icon{
+        color: $primaryColor;      
+        margin-right: 10px;  
+    }
+    label {
+        display: block;
+        width: $w-100per;
+        color: $formFieldLabel;
+        font-size: $font-size-14px;
+        font-weight: $font-weight-normal;        
+    }
+   
+    input {
+        // min-width: 260px;
+        width: 100%;
+    }
+
+    span {
+        &.c-validation-error {
+            font-size: $font-size-10px;
+            color: $validationColor;
+            margin-top: 4px;
+            display: block;
+        }
+    }
+
+    textarea {        
+        padding: .5rem;
+        width: $w-100per;
+    }
+}
+
+// #endregion FORM FIELDS
+
+// #region: App main component
+.mainarea-container {
+    display: flex;
+    width: calc(100% - (var(--marginpaddingacross) * 2));
+    min-height: calc(100% - (var(--marginpaddingacross) * 2));
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.c-btn-full-width {
+    width: $w-100per;
+    padding: 6px 10px;
+}
+
+.c-msg-row {
+    color: $errorMessageTextColor;
+    margin-top: 10px;
+}
+
+// #endregion: App main component
+
+// #region: Top Bar, Left Pane
+.slidebar-btn {
+    color: $shade400;
+    background: transparent;
+    border: 1px solid $shade400;
+    padding: 4px 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+}
+
+.slide-bar-menu {
+    background-color: $leftSidebarBg;
+    width: 200px;
+    max-width: 200px;
+    .p-sidebar-header {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 1rem;
+        z-index: 9;
+
+        .p-sidebar-icon {
+            &:hover {
+                background-color: transparent;
+                color: $shade000;
+            }
+        }
+
+    }
+    .p-sidebar-content {
+        padding: 0;
+    }
+}
+.top-user-dd {
+    font-size: 12px;
+    box-shadow: 0 0 3px 2px var(--shadowColor);
+    border-radius: 5px;
+    margin: 0;
+    padding: 5px;
+    ul {
+        li {
+            a {
+                display: flex;
+                align-items: center;
+                padding: 4px;
+                width: 100%;
+                border-radius: 4px;
+                cursor: pointer;
+                height: 32px;
+                &:hover {
+                    &.p-menuitem-link {
+                        background-color: $highlightBg;
+
+                        .p-menuitem-icon,
+                        .p-menuitem-text {
+                            color: $shade000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.cls-user-topbar{
+    .p-menubar{
+        font-size: 1rem;
+        color: $white;
+        font-weight: $font-weight-normal;
+        background-color: $primaryColor;       
+        border: none;
+        border-radius: 0;
+        padding: 1rem;
+        height: 70px;
+        .p-menuitem-content{
+            color: $white;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+}
+
+.cls-user-round-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 100px;
+    border: 0px;
+    background: $secondaryColor;
+    color: $primaryColor;
+    padding: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    &.fa-trash{
+        color: $trashIcon;
+    }
+}
+
+.v-separator{
+    width: 1px;
+    height: 30px;
+    background: $userTableBorderColor;
+}
+
+// #endregion: Top Bar
+
+/* #region: Classes for Page layout. To be used for all pages */
+.page-title {
+    color: $shade700;
+    font-size: $font-size-20px;
+    font-weight: $font-weight-semibold;
+    text-transform: capitalize;
+}
+
+.cls-page-container {
+    height: 100%;
+    .cls-page-header {
+        display: flex;
+        align-items: center;    
+        justify-content: space-between;   
+        margin-bottom: 15px;
+        height: 40px;
+    }
+    .cls-main-container {
+        padding: 15px;
+        background-color: $white;
+        border-radius: 12px;
+        min-height: calc(100% - 60px);
+        max-height: calc(100% - 60px);
+        overflow-y: auto;
+        .cls-main-area {
+            display: flex;
+            flex-wrap: wrap;
+            // height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+
+        .cls-top-bar {
+            width: 100%;
+        }
+    }
+}
+
+/* #endregion: Classes for Page layout */
+
+/* #region: Classes for Page layout for User. To be used for all pages */
+.cls-top-bar-user {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .cls-grid-heading{
+        font-size: 1rem;
+        color: $primaryTextColor;
+        font-weight: 500;
+        max-width: 300px;
+    }    
+}
+.cls-page-container-user {
+    height: 100%;
+    padding: 20px 30px;
+    .cls-page-header-user {
+        display: flex;
+        align-items: center;    
+        justify-content: space-between;   
+        margin-bottom: 15px;
+        height: 40px;
+    }
+    .cls-main-container-user {
+        min-height: calc(100% - 60px);
+        max-height: calc(100% - 60px);
+        overflow-y: auto;
+        &.cls-main-container{
+            padding: 15px;
+            background-color: $white;
+            border-radius: 12px;
+            height:calc(70vh - -10px)
+        }
+        .cls-main-area-user {
+            display: flex;
+            flex-wrap: wrap;
+            // height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+        .cls-main-area-user-nowrap {
+            display: flex;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .cls-top-bar-user {
+            width: 100%;
+        }
+    }
+}
+.cls-user-page-header-right{
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    margin-bottom: 10px;
+}
+.cls-grid-header {
+    min-width: 50px;
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    .clas-table-header-filter-row{
+        position: relative;    
+        .p-column-filter-clear-button{
+            display: none;
+        }
+        .cls-table-header-content-text{
+            max-width: 120px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .cls-table-header-content-title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            color: $primaryTextColor;
+            margin-bottom: 2px;
+        }
+        .cls-table-header-content-controls {
+            font-size: .875rem;
+            color: $shade600;
+            cursor: pointer;
+            gap: .5rem;
+            display: flex;
+            margin-left: 10px;
+            .cls-selectedpin {
+                color: $primaryColor;
+                transform: rotate(45deg);
+            }
+        }
+    
+    }
+}
+
+/* #endregion: Classes for Page layout for User */
+
+// #region: Settings Page
+.cls-container-head{
+    color: $shade700;
+    font-size: $font-size-16px;
+    font-weight: $font-weight-semibold;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.cls-inline-div{
+    display: flex;
+}
+
+.cls-marginL-10px{
+    margin-left: 10px;
+}
+
+.cls-setting-splitter{
+    display: flex;
+    .p-splitter{
+        height: 100%;
+        border: none;
+        .p-splitter-gutter{
+            background-color: transparent;
+        }
+        .p-splitter-panel{
+            padding: 0px;
+        }
+    }
+}
+
+.c-button-row {
+    text-align: right;
+    border-top: 1px solid $shade1014;
+    padding: 1rem 2rem 0;
+    margin: 0 -1rem;
+    margin-top: 1rem;
+}
+
+.cls-dialog-footer-row {
+    text-align: right;
+    border-top: 1px solid $clsBorder;
+    padding: 1rem 1rem 0;
+    margin: 0 -1rem;
+    margin-top: 1rem;
+}
+
+.cls-link {
+    cursor: pointer;
+    color: $primaryColor;
+}
+
+.cls-setting{
+    .p-splitter{
+        height: 100%;
+    }
+    .p-treetable-tbody > tr{
+        font-weight: 600;
+        border-radius: 4px;
+        display: block;
+        margin: 5px;
+        td{
+            padding: 0.75rem 0.5rem;
+        }
+    }
+}
+
+.cls-setting-menu{
+    width: 100%;
+    border: $border;
+    padding: 10px;
+    border-radius: $borderRadius;
+    .p-tree{
+        padding: 0px;
+        border: none;
+    }
+    .p-icon-field-right {
+        > .p-inputtext{
+            width: 100%;
+        }
+    }
+}
+
+.language-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.cls-main-container-tittle{
+    font-size: 1rem;
+    font-weight: $font-weight-semibold;
+    color: $shade700;
+}
+
+.cls-lang-list{    
+    .p-datatable-table{
+        border-spacing: 0.25rem 0.5rem;
+        
+        .p-datatable-thead{
+            .p-icon-field-right {
+                > .p-inputtext{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    tbody{
+        &.p-datatable-table{
+            border-spacing: 0px 0.5rem; 
+        }
+    }
+    .p-datatable {
+        .p-datatable-tbody {
+            > tr {
+                > td{
+                    // padding: 0.5rem 0.5rem;
+                    border: 1px solid $shade400;
+                    border-radius: $borderRadius;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    max-width: 100%;
+                    &.selected{
+                        border-color: $primaryColor;
+                        background-color: $shade1001;
+                    }
+                }
+            }
+        }
+    }
+}
+.cls-value {
+    input {
+        width: 100%;
+    }
+}
+
+// #endregion: Settings Page
+
+// #region: Common Global classes
+.cls-round-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 100px;
+    border: 0px;
+    background: $secondaryColor;
+    color: $primaryColor;
+    padding: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    &.fa-trash{
+        color: $trashIcon;
+    }
+}
+.cls-squar-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: $shade000;
+    color: $primaryColor;
+    padding: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    &.cls-btn-trash{
+        color: $error-color;
+    }
+    
+}
+
+.cls-100pc {
+    width: 100%;
+}
+
+.cls-width-100per{
+    width: 100%;
+}
+
+.cls-height-100per{
+    height: 100%;
+}
+
+.cls-ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+// #endregion: Common Global classes
+
+ // #region Shopping Cart Pages
+.cls-item-group {
+    font-size: .8rem;
+    color: $shade1016;
+}
+
+.cls-card-proceed-btn{
+    button {
+        width: 100%;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        .p-button-label{
+            font-weight: 500;
+            display: contents;
+        }
+    }
+}
+
+.cls-card-overlayPanel {
+    border-radius: 8px;
+    .p-overlaypanel-content{
+        background-color: $shade000;        
+        border-radius: 8px;
+        margin: 5px;
+        padding: 10px;
+    }
+    .cls-price-total {
+        display: flex;
+        justify-content: space-between;
+        line-height: 50px;
+        font-weight: 500;
+        span:nth-child(1) {
+            font-size: 0.75rem;
+            color: $primaryTextColor;
+        }
+        span:nth-child(2) {
+            font-size: 1rem;
+            color: $primaryColor;
+            
+        }
+    }
+    
+    .cls-cart-container {
+        max-height: 286px;
+        width: 285px;
+        overflow-y: auto;    
+        .cls-item-desc {
+            display: flex;
+            justify-content:space-between;
+            font-size: 0.75rem;
+            font-weight: 500;
+            line-height: normal;
+            span:nth-child(1) {
+                width: 200px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                color: $primaryTextColor;
+            }
+            span:nth-child(2) {
+                color: $primaryColor;
+            }
+        }
+        .cls-item-subdesc{
+            display: block;
+            color: $primaryTextColor;
+            font-size: 10px;
+            font-weight: normal;
+            line-height: 1.6;
+            width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .cls-group-name {
+            font-size: .625rem;
+            color: $primaryTextColor;
+            font-weight: normal;
+            margin-bottom: 6px;
+            span:nth-child(1) {
+                width: 225px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    
+        .cls-qty {
+            font-size: 0.75rem;
+            margin-top: 6px;
+            span:nth-child(1) {
+                color: $shade1016;
+                font-weight: normal;
+            }
+            span:nth-child(2) {
+                color: $primaryTextColor;
+                font-weight: 500;
+                margin-left: 4px;
+            }
+        }
+        .cls-cart-items{
+            border-bottom: 1px solid rgba($primaryColor, 0.29);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+    
+        .cls-cart-items:nth-last-child(1){
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.cls-user-cart-header{
+    padding: 20px 30px;
+    background-color: rgba($primaryColor, 0.1);
+}
+
+.cls-cart{
+    margin-left: 15px;
+    cursor: pointer;
+    position: relative;
+    max-width: 100px;
+    i {
+        margin-right: 6px;
+    }
+    .p-badge {
+        &.p-badge-success {
+            background-color: $shade000;
+            color: $primaryColor;
+            min-width: 15px;
+            height: 15px;
+            font-size: 0.5rem;
+            font-weight: 500;
+            line-height: 15px;
+            right: -6px;
+        }
+    }
+}
+.cls-grid-top-action{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-height: 34px;
+    .cls-grid-calender{
+        max-height: 34px;
+        display: flex;
+        align-items: center;
+        border-color: $primaryColor;
+        .cls-calender-reqdate{
+            font-size: 0.75rem;
+            color: $shade1016;
+        }
+        i{
+            &.fa-calendar{
+                color: $primaryColor;
+            }
+            z-index: 999;
+            cursor: pointer;
+        }
+        .p-calendar {
+            .p-inputtext{
+                border-color: transparent;
+                background: transparent;
+                box-shadow: none;
+            }
+        }
+    }
+    .cls-grid-switch-btn{
+        .p-selectbutton{
+            .p-button{
+                color: $shade400;
+                padding: .5rem .5rem;
+                font-size: .875rem;
+               &.p-highlight{
+                   color: $shade400;
+               }
+           }
+       }
+    }
+}
+.cls-grid-row-action{
+    display: flex;
+    gap: 0.5rem;
+    color: $shade400;
+}
+
+.cls-cart-summary-container{
+    padding-left: 20px;
+    .cls-purchase-order {
+        width: 230px;
+    }
+    .cls-cart-summary-info{
+        color: $shade1016;
+        background-color: $shade1017;
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        margin: 2px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+    .cls-cart-summary-sec{
+        padding: 15px 15px 10px;
+    }
+
+    .cls-cart-summary {
+        box-shadow: 0px 0px 5px var(--secondaryShadowColor);
+        width: 230px;
+        min-height: 200px;
+        border-radius: 6px;
+        border: 1px solid $clsBorder;
+        margin-bottom: 10px;
+        background-color: $white;
+        .cls-cart-header {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            font-size: 1rem;
+            color: $primaryTextColor;
+            font-weight: 500;
+            border-bottom: 1px solid $clsBorder;
+        }
+        .cls-cart-summary-line {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: $primaryTextColor;
+            font-weight: normal;
+            a{
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            span:nth-child(1) {
+                width: 80%;
+                display: inline-block;
+                line-height: 20px;
+                color: $shade1016;
+            }
+        }
+        .cls-cart-total {
+            margin-top: 10px;
+            border-top: 1px dashed $clsBorder;
+        }
+        .cls-cart-total-line {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+            color: $primaryColor;
+            padding-top: 10px;
+            span:nth-child(1) {
+                width: 80%;
+                display: inline-block;
+            }
+        }
+       
+    }
+}
+
+.cls-cart-buttons{
+    margin-top: 10px;
+}
+
+.cls-codetag {
+    font-size: 0.6rem;
+    font-weight: 500;
+    padding: 2px 6px;
+    background-color: lightgrey;
+    display: inline-block;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+// #endregion Shopping Cart Pages
+
+//  page scrollbar 
+*::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #69707d4d;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+*::-webkit-scrollbar-corner, *::-webkit-scrollbar-track {
+    background-color: #69707d0d;
+}
+
+
+.p-datatable-gridlines{
+    .p-datatable-table{
+        border: 1px solid $userTableBorderColor;
+    }
+}
+.cls-page-header{
+    .p-tieredmenu-overlay {
+        left: auto !important;
+        right: 0 !important;
+    }
+}
+
+// .p-button-outlined {
+//     &:not(:disabled):hover {
+//         background: $buttonBg;
+//         color: $buttonTextColor;
+//     }
+// }
+
+.cls-block {
+    display: block;
+}
+
+.cls-page-header{
+    .p-tieredmenu-overlay {
+        left: auto !important;
+        right: 0 !important;
+    }
+}
+
+.danger {
+    color: $validationColor
+}
+
+.cls-small-label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: $date-input-title;
+}
+
+// common for all textarea placeholder field 
+textarea::placeholder{
+    font-family: var(--font-family);
+}

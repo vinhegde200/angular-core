@@ -1,0 +1,57 @@
+.cls-shipment-card-container {
+    .cls-shipaddress-cardhead{
+        display: flex;
+        font-size: .875rem;
+        font-weight: 500;
+        color: $text-color;
+        max-width: 60%;
+        .cls-shipment-count{
+            display: flex;
+            color: $primary-color;
+        }
+    }
+    .cls-delivery-instructions{
+        background-color: $wizard-background;
+        padding: 12px;
+        border-radius: $borderRadius;
+        label{
+            font-size: .875rem;
+            color: $text-color;
+            font-weight: 500;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+            display: block;
+        }
+        textarea{
+            border: 1px solid $clsBorder;
+            border-radius: $borderRadius;
+            padding: 10px;
+        }
+        .cls-save-delivery{
+            font-size: .75rem;
+            font-weight: 500;
+            color: $date-input-title;
+            span{
+                margin-left: 5px;
+            }
+        }
+    }
+    .cls-date-readonly {
+        font-weight: 500;
+        span:nth-child(1) {
+            margin-right: 10px;
+        }
+    }
+    .cls-quantity {
+        text-align: right;
+        span:nth-child(2) {
+            display: block;
+            font-weight: 500;
+        }
+    }
+}
+.cls-qty-slider{
+    .cls-qty-slider-end{
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,33 @@
+.cls-add-address-dlg {
+    .cls-address-dlg {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin: 0px;
+        .cls-shipment-card-address {
+            box-shadow: 0 0 3px 2px $shadow;
+            border-radius: $borderRadius;
+            padding: 12px;
+            cursor: pointer;
+            position: relative;  
+            &.cls-shipment-address-selected{
+                background-color: $shadow;
+            }  
+            &:hover{
+                background-color: $shadow;
+            }
+            .cls-select-box {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+            }
+        }    
+        .cls-ship-addr {
+            display: block;
+        }    
+        .cls-ship-to {
+            display: block;
+            font-weight: 500;
+        }
+    }
+}
